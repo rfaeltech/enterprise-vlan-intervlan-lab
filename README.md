@@ -55,7 +55,7 @@ PCs: 6 (2 per department)
 Server: 1 (DHCP & DNS)
 
 Topology Layout:
-<img src="topology\topology_overview.png" alt="TOPOLOGY OVERVIEW" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="topology\enterprise-vlan-intervlan-lab.png" alt="TOPOLOGY OVERVIEW" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
 **Device Connection Table** 
 
@@ -363,9 +363,10 @@ networking-vlan-intervlan/
 │   └── vlan_table_verification.png
 │
 ├── topology/
-│   └── topology_overview.png
+│   ├── topology_overview.png
+│   ├── enterprise-vlan-intervlan-lab.png
 │
 └── labs/
-    └── Project A.pkt
+    └── enterprise-vlan-intervlan-lab.pkt
 
 ---
