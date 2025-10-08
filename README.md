@@ -188,7 +188,7 @@ R1(dhcp-config)#dns-server 8.8.8.8
 | **PC5 (Sales)**       | 192.168.30.10  | 255.255.255.0 | 192.168.30.1    | VLAN 30                                  |
 | **PC6 (Sales)**       | 192.168.30.11  | 255.255.255.0 | 192.168.30.1    | VLAN 30                                  |
 
-[View Full Configuration File →](configs/pc-configs/pc.txt)
+[View Full Configuration File →](config/pc-configs/pc.txt)
 
 
 ### Server Configuration
@@ -197,7 +197,7 @@ R1(dhcp-config)#dns-server 8.8.8.8
 | --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
 | **Server (DHCP/DNS)** | 192.168.10.100 | 255.255.255.0 | 192.168.10.1    | Connected to SW1 trunk, serves all VLANs |
 
-[View Full Configuration File →](configs/server-configs/server.txt)
+[View Full Configuration File →](config/server-configs/server.txt)
 
 ---
 ## 🧾 Verification Commands
