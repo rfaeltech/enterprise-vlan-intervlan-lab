@@ -28,14 +28,14 @@ Table of Contents
 
 
 ---
-## 📘 Project Overview
+## Project Overview 📘
 
 This lab demonstrates a **realistic enterprise network** with multiple VLANs and inter-VLAN routing using **router-on-a-stick**.  
 The network includes a central switch, a router with subinterfaces, multiple PCs in different VLANs, and a server.  
 It highlights key **CCNA skills**: VLAN creation, trunking, inter-VLAN routing, DHCP, and IP addressing.
 
 ---
-## 🎯 Project Objectives:
+## Project Objectives 🎯 
 
 - Configure VLANs and assign access ports.
 - Configure a trunk port between switch and router.
@@ -54,7 +54,7 @@ All PCs should communicate internally while maintaining proper gateway configura
 Other VLANs access the server via router-on-a-stick inter-VLAN routing, demonstrating proper Layer 3 routing in an enterprise network.”
 
 ---
-## 🖥️ Network Topology
+## Network Topology 🖥️
 
 Router: 1 (R1)
 
@@ -86,7 +86,7 @@ Topology Layout:
 | SW1    | Fa0/7     | Server       | DHCP/DNS Server, trunk or access depending on VLAN assignment |
 
 ---
-## 🧮 IP Addressing Table
+## IP Addressing Table 🧮
 
 | Device / Interface    | IP Address     | Subnet Mask   | Default Gateway | VLAN / Notes                             |
 | --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
@@ -102,7 +102,7 @@ Topology Layout:
 | **Server (DHCP/DNS)** | 192.168.10.100 | 255.255.255.0 | 192.168.10.1    | Connected to SW1 trunk, serves all VLANs |
 
 ---
-## 🔧 Lab Steps
+## Lab Steps 🔧 
 
 1. Connect all devices as per topology.
 
@@ -121,7 +121,7 @@ Topology Layout:
 8. Test connectivity between PCs in different VLANs (Inter-VLAN routing).
 
 ---
-## ⚙️ Device Configuration
+## Device Configuration ⚙️
 
 
 ### 🔌 Switch Configuration
