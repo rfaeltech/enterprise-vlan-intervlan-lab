@@ -10,7 +10,7 @@ _A Cisco Packet Tracer lab demonstrating VLAN segmentation, trunking, and router
 
 Table of Contents
 
-1.  [Project Overview](#project-overview)
+1.  [Project Overview](#📘project-overview)
 2.  [Project Objectives](#project-objectives)
 3.  [Network Topology](#network-topology)
 4.  [IP Addressing Table](#ip-addressing-table)
