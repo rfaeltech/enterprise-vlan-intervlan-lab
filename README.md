@@ -29,6 +29,7 @@ Table of Contents
 This lab simulates a **realistic enterprise network** with multiple VLANs and inter-VLAN routing implemented using **router-on-a-stick**.  
 The network includes a central switch, a router with subinterfaces, multiple PCs in different VLANs, and a server.  
 Key **CCNA skills** demonstrated include VLAN creation, trunk configuration, inter-VLAN routing, DHCP, and IP addressing.
+
 ---
 ## 🎯 Project Objectives  
 
