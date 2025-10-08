@@ -124,7 +124,7 @@ Topology Layout:
 ## ⚙️ Device Configuration
 
 
-### Switch Configuration
+### 🔌 Switch Configuration
 
 SW1 (Layer 3 Switch)
 
@@ -142,7 +142,7 @@ SW1(config-vlan)#
 [View Full Configuration File →](config/switch-configs/sw1.cfg)
 
 
-### Router Configuration
+### 🚦 Router Configuration
 
 Router R1 (Router-on-a-Stick)
 
@@ -161,7 +161,7 @@ R1(config-subif)#no shutdown
 ```
 [View Full Configuration File →](config/router-configs/r1.cfg)
 
-### DHCP Server Configuration
+### 📡 DHCP Server Configuration
 
 ON ROUTER (R1)
 
@@ -177,7 +177,7 @@ R1(dhcp-config)#dns-server 8.8.8.8
 ```
 [View Full Configuration File →](config/router-configs/dhcp.cfg)
 
-### PC Configuration
+### 💻 PC Configuration
 
 | Device / Interface    | IP Address     | Subnet Mask   | Default Gateway | VLAN / Notes                             |
 | --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
@@ -191,7 +191,7 @@ R1(dhcp-config)#dns-server 8.8.8.8
 [View Full Configuration File →](config/pc-configs/pc.txt)
 
 
-### Server Configuration
+### 🖥️ Server Configuration
 
 | Device / Interface    | IP Address     | Subnet Mask   | Default Gateway | VLAN / Notes                             |
 | --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
@@ -202,26 +202,26 @@ R1(dhcp-config)#dns-server 8.8.8.8
 ---
 ## 🧾 Verification Commands
 
-### 1. Topology Screenshot 
+### 1. 🗺️ Topology Screenshot 
 shows the full lab layout in Packet Tracer.
 <img src="topology/topology_overview.png" alt="TOPOLOGY OVERVIEW" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
 
-### 2. VLAN Verification 
+### 2. 🔍 VLAN Verification 
 show vlan brief output on SW1 --> Vlan10,20,30
 ```
 show vlan brief
 ```
 <img src="screenshots/vlan_table_verification.png" alt="show vlan" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
-### 3. Trunk Verification
+### 3. 🔗 Trunk Verification
 Shows show interfaces trunk output, proving the router-to-switch trunk works.
 ```text
 show interfaces trunk
 ```
 <img src="screenshots/trunk_port_status.png" alt="Trunk ports" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
-### 4. Router Subinterfaces / Inter-VLAN Routing
+### 4. ⚙️ Router Subinterfaces / Inter-VLAN Routing
 Shows show ip interface brief or show ip route to prove subinterfaces are configured.
 ```text
 show ip interface brief
@@ -233,7 +233,7 @@ show ip route
 ```
 <img src="screenshots/router_ip_route.png" alt="IP route" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
-### 5. Connectivity / Ping Test
+### 5. 🌐 Connectivity / Ping Test
 
 - Ping between PCs in same VLAN PC 2 to PC1
 <img src="screenshots/ping_same_vlan.png" alt="ping within same vlan" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
