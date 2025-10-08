@@ -139,7 +139,7 @@ SW1(config-vlan)#vlan 30
 SW1(config-vlan)#name Sales
 SW1(config-vlan)#
 ```
-[View Full Configuration File →](configs/switch-configs/sw1.cfg)
+[View Full Configuration File →](config/switch-configs/sw1.cfg)
 
 
 ### Router Configuration
@@ -159,7 +159,7 @@ R1(config-subif)#encapsulation dot1Q 10
 R1(config-subif)#ip address 192.168.10.1 255.255.255.0
 R1(config-subif)#no shutdown
 ```
-[View Full Configuration File →](configs/router-configs/r1.cfg)
+[View Full Configuration File →](config/router-configs/r1.cfg)
 
 ### DHCP Server Configuration
 
@@ -175,7 +175,7 @@ R1(dhcp-config)#network 192.168.10.0 255.255.255.0
 R1(dhcp-config)#default-router 192.168.10.1
 R1(dhcp-config)#dns-server 8.8.8.8
 ```
-[View Full Configuration File →](configs/router-configs/dhcp.cfg)
+[View Full Configuration File →](config/router-configs/dhcp.cfg)
 
 ### PC Configuration
 
