@@ -1,7 +1,3 @@
-# Project 1: Enterprise VLAN & Inter-VLAN Routing Setup
-
----
-
 
 # 🏢 Enterprise VLAN & Inter-VLAN Routing Setup
 
@@ -19,21 +15,20 @@ Table of Contents
     - [🔀 Switch Configuration](#-switch-configuration)
     - [🚦 Router Configuration](#-router-configuration)
     - [📡 DHCP Server Configuration](#-dhcp-server-configuration)
-    - [🖥️ PC Configuration](#-pc-configuration)
-    - [🗄️ Server Configuration](#-server-configuration)
+    - [🖥️ PC & Server Configuration](#-pc-and-server-configuration)
 7. [✅ Verification Commands](#-verification-commands)
-8. [📂 Folder Structure](#-folder-structure)
-9. [🎓 Learning Outcomes](#-learning-outcomes)
-10. [ℹ️ Repository Info](#-repository-info)
+8. [⚡ How to Run Lab](#-how-to-run-lab)
+9. [📂 Folder Structure](#-folder-structure)
+10.[🎓 Learning Outcomes](#-learning-outcomes)
+11.[ℹ️ Repository Info](#-repository-info)
 
 
 ---
 ## 📘 Project Overview 
 
-This lab demonstrates a **realistic enterprise network** with multiple VLANs and inter-VLAN routing using **router-on-a-stick**.  
+This lab simulates a **realistic enterprise network** with multiple VLANs and inter-VLAN routing implemented using **router-on-a-stick**.  
 The network includes a central switch, a router with subinterfaces, multiple PCs in different VLANs, and a server.  
-It highlights key **CCNA skills**: VLAN creation, trunking, inter-VLAN routing, DHCP, and IP addressing.
-
+Key **CCNA skills** demonstrated include VLAN creation, trunk configuration, inter-VLAN routing, DHCP, and IP addressing.
 ---
 ## 🎯 Project Objectives  
 
@@ -50,8 +45,7 @@ All PCs should communicate internally while maintaining proper gateway configura
 
 **Important Note:**
 
-“The server resides in VLAN10 (HR). 
-Other VLANs access the server via router-on-a-stick inter-VLAN routing, demonstrating proper Layer 3 routing in an enterprise network.”
+“The server resides in VLAN 10 (HR), while other VLANs access it via router-on-a-stick inter-VLAN routing, demonstrating proper Layer 3 communication in an enterprise network.”
 
 ---
 ## 🖥️ Network Topology 
@@ -104,7 +98,7 @@ Topology Layout:
 ---
 ## 🔧 Lab Steps  
 
-1. Connect all devices as per topology.
+1. **Connect all devices as per topology diagram.** → **Connect all devices according to the topology diagram**.
 
 2. Configure VLANs on the switch.
 
@@ -114,11 +108,11 @@ Topology Layout:
 
 5. Configure DHCP pools on the server or router.
 
-6. Assign PCs to VLANs and enable DHCP.
+6. **Assign PCs to VLANs and enable DHCP**. → **Assign PCs to their respective VLANs and configure DHCP**.
 
 7. Test connectivity between PCs in same VLAN.
 
-8. Test connectivity between PCs in different VLANs (Inter-VLAN routing).
+8. **Test connectivity between PCs in different VLANs (Inter-VLAN routing)**. → **Test inter-VLAN connectivity between PCs in different VLANs**.
 
 ---
 ## ⚙️ Device Configuration 
@@ -137,7 +131,6 @@ SW1(config-vlan)#vlan 20
 SW1(config-vlan)#name IT
 SW1(config-vlan)#vlan 30
 SW1(config-vlan)#name Sales
-SW1(config-vlan)#
 ```
 [View Full Configuration File →](config/switch-configs/sw1.cfg)
 
@@ -177,27 +170,12 @@ R1(dhcp-config)#dns-server 8.8.8.8
 ```
 [View Full Configuration File →](config/router-configs/dhcp.cfg)
 
-### 💻 PC Configuration
+### 🖥️ PC & Server Configuration
 
-| Device / Interface    | IP Address     | Subnet Mask   | Default Gateway | VLAN / Notes                             |
-| --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
-| **PC1 (HR)**          | 192.168.10.10  | 255.255.255.0 | 192.168.10.1    | VLAN 10                                  |
-| **PC2 (HR)**          | 192.168.10.11  | 255.255.255.0 | 192.168.10.1    | VLAN 10                                  |
-| **PC3 (IT)**          | 192.168.20.10  | 255.255.255.0 | 192.168.20.1    | VLAN 20                                  |
-| **PC4 (IT)**          | 192.168.20.11  | 255.255.255.0 | 192.168.20.1    | VLAN 20                                  |
-| **PC5 (Sales)**       | 192.168.30.10  | 255.255.255.0 | 192.168.30.1    | VLAN 30                                  |
-| **PC6 (Sales)**       | 192.168.30.11  | 255.255.255.0 | 192.168.30.1    | VLAN 30                                  |
+Refer to full files: 
+[PC Configs →](config/pc-configs/pc.txt)
 
-[View Full Configuration File →](config/pc-configs/pc.txt)
-
-
-### 🖥️ Server Configuration
-
-| Device / Interface    | IP Address     | Subnet Mask   | Default Gateway | VLAN / Notes                             |
-| --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
-| **Server (DHCP/DNS)** | 192.168.10.100 | 255.255.255.0 | 192.168.10.1    | Connected to SW1 trunk, serves all VLANs |
-
-[View Full Configuration File →](config/server-configs/server.txt)
+[Server Configs →](config/server-configs/server.txt)
 
 ---
 ## 🧾 Verification Commands
@@ -235,27 +213,56 @@ show ip route
 
 ### 5. 🌐 Connectivity / Ping Test
 
-- Ping between PCs in same VLAN PC 2 to PC1
+- Ping between PCs in same VLAN PC 2 to PC1 → “Ping between PCs in the same VLAN (PC2 → PC1)”
 <img src="screenshots/ping_same_vlan.png" alt="ping within same vlan" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
-- Ping between PCs in different VLANs PC3 to PC6
+- Ping between PCs in different VLANs PC3 to PC6 → “Ping between PCs in different VLANs (PC3 → PC6)”
 <img src="screenshots/ping_different_vlan.png" alt="ping between vlans" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 - Ping server from router R1 to Server1 (VLAN 10)
-<img src="screenshots/vlan _10_ping_server.png" alt="Vlan10 to server" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/vlan _10_ping_server.png" ="alt="VLAN10 to server" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 - Ping server from PCs in different VLANs
 <img src="screenshots/vlan_30_ping_server.png" alt="Other vlan to server" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+
+**Test Summary Table:**
+
+| Test                   | Status      | Notes                                        |
+|------------------------|-------------|----------------------------------------------|
+| VLAN Configuration     | ✅ Success  | VLANs 10, 20, 30 configured on SW1           |
+| Trunk Port             | ✅ Success  | Trunk between SW1 G0/1 and R1 G0/0 verified  |
+| Router-on-a-Stick      | ✅ Success  | Subinterfaces configured for all VLANs       | 
+| DHCP Assignment        | ✅ Success  | PCs received IP addresses automatically      |
+| Ping Tests (Intra-VLAN)| ✅ Success  | PCs in the same VLAN can communicate         |
+| Ping Tests (Inter-VLAN)| ✅ Success  | PCs across VLANs can communicate via router  |
+| Server Connectivity    | ✅ Success  | All VLANs can reach the server               |
+
+
+---
+
+## ⚡ How to Run Lab
+
+1. Open **Cisco Packet Tracer 8.x** (recommended).
+
+2. Open the lab file: labs/enterprise-vlan-intervlan-lab.pkt.
+
+3. Follow **Lab Steps** section above.
+
+4. Verify VLANs, trunking, router-on-a-stick, DHCP and inter-VLAN connectivity.
+
+5. Use the **Verification Commands** section to confirm correct operation.
+
+6. Optional: Enable **Simulation Mode** to observe packet flow between VLANS and the Server.
 
 ---
 
 ## 📁 Folder Structure
 
-networking-vlan-intervlan/
+enterprise-vlan-intervlan-lab/
 │── README.md
 │── verification.md
 │── LICENSE
 │── Learning Outcomes
 │── Repository Info
 │
-├── configs/
+├── config/
 │   ├── router-configs/
 │   │   ├── r1.cfg
 │   │   └── dhcp.cfg
@@ -289,10 +296,20 @@ networking-vlan-intervlan/
 ---
 
 ### 🧠 Learning Outcomes
-- VLAN segmentation and inter-VLAN routing configuration
-- Router-on-a-stick and trunk setup
-- DHCP server integration across VLANs
-- End-to-end network verification using Cisco Packet Tracer
+
+After completing this lab, you will be able to:
+
+- Configure **VLANs, trunk ports**, and **router-on-a-stick inter-VLAN routing**.
+
+- Assign and verify **DHCP-assigned IP addresses** across VLANs.”
+
+- Interpret **show commands** (show vlan brief, show ip interface brief, show ip route, show interfaces trunk) to troubleshoot and verify network configuration.
+
+- Demonstrate **network connectivity testing** using ping across VLANs and to the server.
+
+- Apply **layer 2 and layer 3 network reasoning** to solve network issues.
+
+- Develop practical skills relevant to **CCNA certification** and enterprise network management.
 
 ---
 
