@@ -1,5 +1,13 @@
 # Project 1: Enterprise VLAN & Inter-VLAN Routing Setup
 
+---
+
+
+# 🏢 Enterprise VLAN & Inter-VLAN Routing Setup
+
+_A Cisco Packet Tracer lab demonstrating VLAN segmentation, trunking, and router-on-a-stick inter-VLAN routing for enterprise networks._
+
+
 Table of Contents
 
 1.  [Project Overview](#project-overview)
@@ -15,17 +23,19 @@ Table of Contents
      - [Server Configuration](#server-configuration)
 7.  [Verification Commands](#verification-commands)
 8.  [Folder Structure](#folder-structure)
+9.  [Learning Outcomes](#learning-outcomes)
+10. [Repository Info](#repository-info)
 
 
 ---
-## Project Overview
+## 📘 Project Overview
 
 This lab demonstrates a **realistic enterprise network** with multiple VLANs and inter-VLAN routing using **router-on-a-stick**.  
 The network includes a central switch, a router with subinterfaces, multiple PCs in different VLANs, and a server.  
 It highlights key **CCNA skills**: VLAN creation, trunking, inter-VLAN routing, DHCP, and IP addressing.
 
 ---
-## Project Objectives:
+## 🎯 Project Objectives:
 
 - Configure VLANs and assign access ports.
 - Configure a trunk port between switch and router.
@@ -44,7 +54,7 @@ All PCs should communicate internally while maintaining proper gateway configura
 Other VLANs access the server via router-on-a-stick inter-VLAN routing, demonstrating proper Layer 3 routing in an enterprise network.”
 
 ---
-## Network Topology
+## 🖥️ Network Topology
 
 Router: 1 (R1)
 
@@ -55,9 +65,13 @@ PCs: 6 (2 per department)
 Server: 1 (DHCP & DNS)
 
 Topology Layout:
-<img src="topology\enterprise-vlan-intervlan-lab.png" alt="TOPOLOGY OVERVIEW" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="topology/enterprise-vlan-intervlan-lab.png" alt="TOPOLOGY OVERVIEW" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
-**Device Connection Table** 
+> 🧩 See `topology/enterprise-vlan-intervlan-lab.png` for network diagram.  
+> Drawio design available at: `drawio/enterprise-vlan-intervlan-lab.drawio`
+
+
+🗂️ **Device Connection Table** 
 
 | Device | Interface | Connected To | Notes                                                         |
 | ------ | --------- | ------------ | ------------------------------------------------------------- |
@@ -72,7 +86,7 @@ Topology Layout:
 | SW1    | Fa0/7     | Server       | DHCP/DNS Server, trunk or access depending on VLAN assignment |
 
 ---
-## IP Addressing Table
+## 🧮 IP Addressing Table
 
 | Device / Interface    | IP Address     | Subnet Mask   | Default Gateway | VLAN / Notes                             |
 | --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
@@ -88,7 +102,7 @@ Topology Layout:
 | **Server (DHCP/DNS)** | 192.168.10.100 | 255.255.255.0 | 192.168.10.1    | Connected to SW1 trunk, serves all VLANs |
 
 ---
-## Lab Steps
+## 🔧 Lab Steps
 
 1. Connect all devices as per topology.
 
@@ -107,19 +121,15 @@ Topology Layout:
 8. Test connectivity between PCs in different VLANs (Inter-VLAN routing).
 
 ---
-## Device Configuration
+## ⚙️ Device Configuration
 
 
-## Switch Configuration
+### Switch Configuration
 
 SW1 (Layer 3 Switch)
-```text
-Switch>en
-Switch#conf t
-Enter configuration commands, one per line.  End with CNTL/Z.
-Switch(config)#hostname SW1
-```
-SW1(config)#! Create VLANs
+
+Below is a snippet of the SW1 config. View the full file below: 
+
 ```text
 SW1(config)#vlan 10
 SW1(config-vlan)#name HR
@@ -129,111 +139,34 @@ SW1(config-vlan)#vlan 30
 SW1(config-vlan)#name Sales
 SW1(config-vlan)#
 ```
-SW1(config-vlan)#! Assign access ports
-```text
-SW1(config-vlan)#interface range fa0/1-2
-SW1(config-if-range)#switchport mode access
-SW1(config-if-range)#switchport access vlan 10
-SW1(config-if-range)#
-SW1(config-if-range)#interface range fa0/3-4
-SW1(config-if-range)#switchport mode access
-SW1(config-if-range)#switchport access vlan 20
-SW1(config-if-range)#
-SW1(config-if-range)#interface range fa0/5-6
-SW1(config-if-range)#switchport mode access
-SW1(config-if-range)#switchport access vlan 30
-SW1(config-if-range)#end
-SW1(config)#interface fa0/7
-SW1(config-if)#switchport mode access
-SW1(config-if)#switchport access vlan 10
-SW1(config-if)#no shutdown
-SW1(config-if)#
-```
-SW1(config-if)#! Configure trunk to router 
-```text
-SW1(config-if-range)#interface g0/1
-SW1(config-if)#switchport mode trunk
-SW1(config-if)#switchport trunk allowed vlan 10,20,30
-SW1(config-if)#no shutdown
-SW1(config-if)#exit
-SW1(config)#
-SW1(config)#end
-SW1#
-%SYS-5-CONFIG_I: Configured from console by console
+[View Full Configuration File →](configs/switch-configs/sw1.cfg)
 
-SW1#write
-Building configuration...
-[OK]
-SW1#
-```
 
-## Router Configuration
+### Router Configuration
 
 Router R1 (Router-on-a-Stick)
+
+Below is a snippet of the R1 config. View the full file below: 
+
 ```text
-Router>en
-Router#conf t
-Enter configuration commands, one per line.  End with CNTL/Z.
-Router(config)#hostname R1
-R1(config)#
-R1(config)# 
 R1(config)#interface g0/0
 R1(config-if)#no shutdown
 
-R1(config-if)#
-%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
-
-%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
-
-%LINK-5-CHANGED: Interface GigabitEthernet0/0.10, changed state to up
-
-%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.10, changed state to up
-
-%LINK-5-CHANGED: Interface GigabitEthernet0/0.20, changed state to up
-
-%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.20, changed state to up
-
-%LINK-5-CHANGED: Interface GigabitEthernet0/0.30, changed state to up
-
-%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.30, changed state to up
-```
 ! Subinterfaces for VLANs
 ```text
 R1(config)#interface g0/0.10
 R1(config-subif)#encapsulation dot1Q 10
 R1(config-subif)#ip address 192.168.10.1 255.255.255.0
 R1(config-subif)#no shutdown
-R1(config-subif)#
-R1(config-subif)#interface g0/0.20
-R1(config-subif)#encapsulation dot1Q 20
-R1(config-subif)#ip address 192.168.20.1 255.255.255.0
-R1(config-subif)#no shutdown
-R1(config-subif)#
-R1(config-subif)#interface g0/0.30
-R1(config-subif)#encapsulation dot1Q 30
-R1(config-subif)#ip address 192.168.30.1 255.255.255.0
-R1(config-subif)#no shutdown
-R1(config-subif)#
-R1(config-subif)#end
-R1#
-%SYS-5-CONFIG_I: Configured from console by console
-
-R1#write
-Building configuration...
-[OK]
-R1#
 ```
+[View Full Configuration File →](configs/router-configs/r1.cfg)
 
-## DHCP Server Configuration
+### DHCP Server Configuration
 
 ON ROUTER (R1)
-```text
-R1#conf t
-Enter configuration commands, one per line.  End with CNTL/Z.
-R1(config)#
-R1(config)#
-```
-R1(config)#! DHCP Server Configuration
+
+Below is a snippet of the dhcp config. View the full file below: 
+
 ```text
 R1(config)#
 R1(config)#! VLAN 10 HR
@@ -241,31 +174,10 @@ R1(config)#ip dhcp pool HR
 R1(dhcp-config)#network 192.168.10.0 255.255.255.0
 R1(dhcp-config)#default-router 192.168.10.1
 R1(dhcp-config)#dns-server 8.8.8.8
-R1(dhcp-config)#
-R1(dhcp-config)#! VLAN 20 IT
-R1(dhcp-config)#ip dhcp pool IT
-R1(dhcp-config)#network 192.168.20.0 255.255.255.0
-R1(dhcp-config)#default-router 192.168.20.1
-R1(dhcp-config)#dns-server 8.8.8.8
-R1(dhcp-config)#
 ```
-R1(dhcp-config)#! VLAN 30 IT
-```text
-R1(dhcp-config)#network 192.168.30.0 255.255.255.0
-R1(dhcp-config)#default-router 192.168.30.1
-R1(dhcp-config)#dns-server 8.8.8.8
-R1(dhcp-config)#
-R1(dhcp-config)#end
-R1#
-%SYS-5-CONFIG_I: Configured from console by console
+[View Full Configuration File →](configs/router-configs/dhcp.cfg)
 
-R1#write
-Building configuration...
-[OK]
-R1#
-```
-
-## PC Configuration
+### PC Configuration
 
 | Device / Interface    | IP Address     | Subnet Mask   | Default Gateway | VLAN / Notes                             |
 | --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
@@ -276,20 +188,23 @@ R1#
 | **PC5 (Sales)**       | 192.168.30.10  | 255.255.255.0 | 192.168.30.1    | VLAN 30                                  |
 | **PC6 (Sales)**       | 192.168.30.11  | 255.255.255.0 | 192.168.30.1    | VLAN 30                                  |
 
+[View Full Configuration File →](configs/pc-configs/pc.txt)
 
-## Server Configuration
+
+### Server Configuration
 
 | Device / Interface    | IP Address     | Subnet Mask   | Default Gateway | VLAN / Notes                             |
 | --------------------- | -------------- | ------------- | --------------- | ---------------------------------------- |
 | **Server (DHCP/DNS)** | 192.168.10.100 | 255.255.255.0 | 192.168.10.1    | Connected to SW1 trunk, serves all VLANs |
 
+[View Full Configuration File →](configs/server-configs/server.txt)
 
 ---
-## Verification Commands
+## 🧾 Verification Commands
 
 ### 1. Topology Screenshot 
 shows the full lab layout in Packet Tracer.
-<img src="topology\topology_overview.png" alt="TOPOLOGY OVERVIEW" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="topology/topology_overview.png" alt="TOPOLOGY OVERVIEW" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
 
 ### 2. VLAN Verification 
@@ -297,46 +212,48 @@ show vlan brief output on SW1 --> Vlan10,20,30
 ```
 show vlan brief
 ```
-<img src="screenshots\vlan_table_verification.png" alt="show vlan" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/vlan_table_verification.png" alt="show vlan" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
 ### 3. Trunk Verification
 Shows show interfaces trunk output, proving the router-to-switch trunk works.
 ```text
 show interfaces trunk
 ```
-<img src="screenshots\trunk_port_status.png" alt="Trunk ports" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/trunk_port_status.png" alt="Trunk ports" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
 ### 4. Router Subinterfaces / Inter-VLAN Routing
 Shows show ip interface brief or show ip route to prove subinterfaces are configured.
 ```text
 show ip interface brief
 ```
-<img src="screenshots\router_subinterfaces.png" alt="Sub interface" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/router_subinterfaces.png" alt="Sub interface" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
 ```text
 show ip route
 ```
-<img src="screenshots\router_ip_route.png" alt="IP route" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/router_ip_route.png" alt="IP route" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
 ### 5. Connectivity / Ping Test
 
 - Ping between PCs in same VLAN PC 2 to PC1
-<img src="screenshots\ping_same_vlan.png" alt="ping within same vlan" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/ping_same_vlan.png" alt="ping within same vlan" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 - Ping between PCs in different VLANs PC3 to PC6
-<img src="screenshots\ping_different_vlan.png" alt="ping between vlans" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/ping_different_vlan.png" alt="ping between vlans" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 - Ping server from router R1 to Server1 (VLAN 10)
-<img src="screenshots\vlan _10_ping_server.png" alt="Vlan10 to server" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/vlan _10_ping_server.png" alt="Vlan10 to server" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 - Ping server from PCs in different VLANs
-<img src="screenshots\vlan_30_ping_server.png" alt="Other vlan to server" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
+<img src="screenshots/vlan_30_ping_server.png" alt="Other vlan to server" style="border:1px solid #ddd; padding:5px; max-width:100%; height:auto;">
 
 ---
 
-## Folder Structure
+## 📁 Folder Structure
 
 networking-vlan-intervlan/
 │── README.md
 │── verification.md
 │── LICENSE
+│── Learning Outcomes
+│── Repository Info
 │
 ├── configs/
 │   ├── router-configs/
@@ -347,10 +264,10 @@ networking-vlan-intervlan/
 │   │   └── sw1.cfg
 │   │
 │   ├── pc-configs/
-│   │   └── pc.cfg
+│   │   └── pc.txt
 │   │
 │   └── server-configs/
-│       └── server.cfg
+│       └── server.txt
 │
 ├── screenshots/
 │   ├── ping_different_vlan.png
@@ -368,5 +285,19 @@ networking-vlan-intervlan/
 │
 └── labs/
     └── enterprise-vlan-intervlan-lab.pkt
+
+---
+
+### 🧠 Learning Outcomes
+- VLAN segmentation and inter-VLAN routing configuration
+- Router-on-a-stick and trunk setup
+- DHCP server integration across VLANs
+- End-to-end network verification using Cisco Packet Tracer
+
+---
+
+### 📂 Repository Info
+This project is part of my **CCNA Lab Portfolio**.  
+Explore more labs here 👉 [@asmymhm](https://github.com/asmymhm)
 
 ---
