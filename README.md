@@ -11,7 +11,7 @@ Table of Contents
 3.  [🌐 Network Topology](#-network-topology)
 4.  [📝 IP Addressing Table](#-ip-addressing-table)
 5.  [🛠️ Lab Steps](#-lab-steps)
-6.  [💻 Device Configuration](#-device-configuration)
+6.  [🖧 Device Configuration](#-device-configuration)
      - [🔀 Switch Configuration](#-switch-configuration)
      - [🚦 Router Configuration](#-router-configuration)
      - [📡 DHCP Server Configuration](#-dhcp-server-configuration)
@@ -116,7 +116,7 @@ Topology Layout:
 8. **Test connectivity between PCs in different VLANs (Inter-VLAN routing)**. → **Test inter-VLAN connectivity between PCs in different VLANs**.
 
 ---
-## 💻 Device Configuration 
+## 🖧 Device Configuration 
 
 ### 🔌 Switch Configuration
 
