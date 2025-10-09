@@ -6,9 +6,9 @@ This document provides evidence of successful VLAN configuration, trunking, inte
 
 ## 📑 Table of Contents
 
-1. [Switch Verification](#switch-verification)
-2. [Router Verification](#router-verification)
-3. [Connectivity Tests](#connectivity-tests)
+1. [🧩 Switch Verification](#-switch-verification)
+2. [🖥️ Router Verification](#-router-verification)
+3. [🌐 Connectivity Tests](#-connectivity-tests)
 
 ---
 
