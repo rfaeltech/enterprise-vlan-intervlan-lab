@@ -296,7 +296,7 @@ enterprise-vlan-intervlan-lab/
 
 ---
 
-### 🧠 Learning Outcomes
+## 🧠 Learning Outcomes
 
 After completing this lab, you will be able to:
 
@@ -314,7 +314,7 @@ After completing this lab, you will be able to:
 
 ---
 
-### 📂 Repository Info
+## 📂 Repository Info
 This project is part of my **CCNA Lab Portfolio**.  
 Explore more labs here 👉 [@asmymhm](https://github.com/asmymhm)
 
