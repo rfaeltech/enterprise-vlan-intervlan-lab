@@ -49,7 +49,7 @@ All PCs should communicate internally while maintaining proper gateway configura
 “The server resides in VLAN 10 (HR), while other VLANs access it via router-on-a-stick inter-VLAN routing, demonstrating proper Layer 3 communication in an enterprise network.”
 
 ---
-## 🖥️ Network Topology 
+## 🌐 Network Topology 
 
 Router: 1 (R1)
 
