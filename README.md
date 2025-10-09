@@ -15,7 +15,7 @@ Table of Contents
      - [🔀 Switch Configuration](#-switch-configuration)
      - [🚦 Router Configuration](#-router-configuration)
      - [📡 DHCP Server Configuration](#-dhcp-server-configuration)
-     - [🖥️ PC & Server Configuration](#-pc-and-server-configuration)
+     - [🖥️ PC and Server Configuration](#-pc-and-server-configuration)
 7.  [✅ Verification Commands](#-verification-commands)
 8.  [⚡ How to Run Lab](#-how-to-run-lab)
 9.  [📂 Folder Structure](#-folder-structure)
@@ -170,12 +170,12 @@ R1(dhcp-config)#dns-server 8.8.8.8
 ```
 [View Full Configuration File →](config/router-configs/dhcp.cfg)
 
-### 🖥️ PC & Server Configuration
+### 🖥️ PC and Server Configuration
 
 Refer to full files: 
-[PC Configs →](config/pc-configs/pc.txt)
+- [PC Configs →](config/pc-configs/pc.txt)
 
-[Server Configs →](config/server-configs/server.txt)
+- [Server Configs →](config/server-configs/server.txt)
 
 ---
 ## 🧾 Verification Commands
