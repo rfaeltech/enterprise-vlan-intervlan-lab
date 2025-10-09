@@ -6,21 +6,21 @@ _A Cisco Packet Tracer lab demonstrating VLAN segmentation, trunking, and router
 
 Table of Contents
 
-1. [📘 Project Overview](#-project-overview)
-2. [🎯 Project Objectives](#-project-objectives)
-3. [🌐 Network Topology](#-network-topology)
-4. [📝 IP Addressing Table](#-ip-addressing-table)
-5. [🛠️ Lab Steps](#-lab-steps)
-6. [💻 Device Configuration](#-device-configuration)
-    - [🔀 Switch Configuration](#-switch-configuration)
-    - [🚦 Router Configuration](#-router-configuration)
-    - [📡 DHCP Server Configuration](#-dhcp-server-configuration)
-    - [🖥️ PC & Server Configuration](#-pc-and-server-configuration)
-7. [✅ Verification Commands](#-verification-commands)
-8. [⚡ How to Run Lab](#-how-to-run-lab)
-9. [📂 Folder Structure](#-folder-structure)
-10.[🎓 Learning Outcomes](#-learning-outcomes)
-11.[ℹ️ Repository Info](#-repository-info)
+1.  [📘 Project Overview](#-project-overview)
+2.  [🎯 Project Objectives](#-project-objectives)
+3.  [🌐 Network Topology](#-network-topology)
+4.  [📝 IP Addressing Table](#-ip-addressing-table)
+5.  [🛠️ Lab Steps](#-lab-steps)
+6.  [💻 Device Configuration](#-device-configuration)
+     - [🔀 Switch Configuration](#-switch-configuration)
+     - [🚦 Router Configuration](#-router-configuration)
+     - [📡 DHCP Server Configuration](#-dhcp-server-configuration)
+     - [🖥️ PC & Server Configuration](#-pc-and-server-configuration)
+7.  [✅ Verification Commands](#-verification-commands)
+8.  [⚡ How to Run Lab](#-how-to-run-lab)
+9.  [📂 Folder Structure](#-folder-structure)
+10. [🎓 Learning Outcomes](#-learning-outcomes)
+11. [ℹ️ Repository Info](#-repository-info)
 
 
 ---
@@ -237,7 +237,6 @@ show ip route
 
 
 ---
-
 ## ⚡ How to Run Lab
 
 1. Open **Cisco Packet Tracer 8.x** (recommended).
@@ -253,7 +252,6 @@ show ip route
 6. Optional: Enable **Simulation Mode** to observe packet flow between VLANS and the Server.
 
 ---
-
 ## 📁 Folder Structure
 
 enterprise-vlan-intervlan-lab/
@@ -293,9 +291,7 @@ enterprise-vlan-intervlan-lab/
 │
 └── labs/
     └── enterprise-vlan-intervlan-lab.pkt
-
 ---
-
 ## 🧠 Learning Outcomes
 
 After completing this lab, you will be able to:
@@ -313,7 +309,6 @@ After completing this lab, you will be able to:
 - Develop practical skills relevant to **CCNA certification** and enterprise network management.
 
 ---
-
 ## 📂 Repository Info
 This project is part of my **CCNA Lab Portfolio**.  
 Explore more labs here 👉 [@asmymhm](https://github.com/asmymhm)
