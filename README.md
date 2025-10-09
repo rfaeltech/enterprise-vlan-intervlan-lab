@@ -11,11 +11,11 @@ Table of Contents
 3.  [🌐 Network Topology](#-network-topology)
 4.  [📝 IP Addressing Table](#-ip-addressing-table)
 5.  [🛠️ Lab Steps](#-lab-steps)
-6.  [🖧 Device Configuration](#-device-configuration)
+6.  [💻 Device Configuration](#-device-configuration)
      - [🔀 Switch Configuration](#-switch-configuration)
      - [🚦 Router Configuration](#-router-configuration)
      - [📡 DHCP Server Configuration](#-dhcp-server-configuration)
-     - [🖥️ PC and Server Configuration](#-pc-and-server-configuration)
+     - [🖧 PC and Server Configuration](#-pc-and-server-configuration)
 7.  [✅ Verification Commands](#-verification-commands)
 8.  [⚡ How to Run Lab](#-how-to-run-lab)
 9.  [📂 Folder Structure](#-folder-structure)
@@ -116,7 +116,7 @@ Topology Layout:
 8. **Test connectivity between PCs in different VLANs (Inter-VLAN routing)**. → **Test inter-VLAN connectivity between PCs in different VLANs**.
 
 ---
-## 🖧 Device Configuration 
+## 💻 Device Configuration 
 
 ### 🔌 Switch Configuration
 
@@ -170,7 +170,7 @@ R1(dhcp-config)#dns-server 8.8.8.8
 ```
 [View Full Configuration File →](config/router-configs/dhcp.cfg)
 
-### 🖥️ PC and Server Configuration
+### 🖧 PC and Server Configuration
 
 Refer to full files: 
 - [PC Configs →](config/pc-configs/pc.txt)
