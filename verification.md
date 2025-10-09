@@ -7,7 +7,7 @@ This document provides evidence of successful VLAN configuration, trunking, inte
 ## 📑 Table of Contents
 
 1. [🧩 Switch Verification](#-switch-verification)
-2. [🖥️ Router Verification](#-router-verification)
+2. [🚦 Router Verification](#-router-verification)
 3. [🌐 Connectivity Tests](#-connectivity-tests)
 
 ---
@@ -24,7 +24,7 @@ This document provides evidence of successful VLAN configuration, trunking, inte
 
 ---
 
-## 🖥️ Router Verification
+## 🚦 Router Verification
 
 - [ ] `show ip interface brief` → subinterfaces G0/0.10, G0/0.20, G0/0.30 up  
   **Expected Output:** Subinterfaces with correct IP addresses and status up  
