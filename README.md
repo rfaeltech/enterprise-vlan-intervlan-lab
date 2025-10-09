@@ -116,8 +116,7 @@ Topology Layout:
 8. **Test connectivity between PCs in different VLANs (Inter-VLAN routing)**. → **Test inter-VLAN connectivity between PCs in different VLANs**.
 
 ---
-## ⚙️ Device Configuration 
-
+## 💻 Device Configuration 
 
 ### 🔌 Switch Configuration
 
